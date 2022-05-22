@@ -1,0 +1,67 @@
+public class myntra{
+
+public static void main(String[] args){
+
+
+String url = "https://www.myntra.com/";
+
+system.setProperty("webdriver.chrome.driver","src/test/resource/driver/chromedriver.exe");
+
+WebDriver driver = new ChromeDriver();
+
+driver.get(url);
+
+Actions act = new Actions(driver);
+
+WebElement men = driver.findElement(By.xpath("//a[@href='/shop/men']"));
+
+act.moveToElement(men).perform();
+
+driver.findElement(By.xpath("//a[@href='/men-belts']")).click();
+
+String price = driver.findElement(By.xpath("//span[@class='product-DiscountedPrice']")).getText();
+
+System.out.println(price);
+
+driver.close();
+
+driver.quit();
+
+}
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+public class myntra{
+
+public void set_url(){
+
+String url = "https://www.myntra.com/";
+
+system.setProperty("webdriver.chrome.driver","src/test/resource/driver/chromedriver.exe");
+
+WebDriver driver = new ChromeDriver();
+
+driver.get(url);
+}
+
+public void search_product(){
+
+Actions act = new Actions(driver);
+
+WebElement men = driver.findElement(By.xpath("//a[@href='/shop/men']"));
+
+act.moveToElement(men).perform();
+
+driver.findElement(By.xpath("//a[@href='/men-belts']")).click();
+
+String price = driver.findElement(By.xpath("span[@class='product-DiscountedPrice']")).getText();
+
+System.out.println(price);
+
+driver.close();
+
+driver.quit();
+
+}
+
+}
